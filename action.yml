@@ -1,0 +1,8 @@
+name: 'Save Repo for Jira Action'
+description: Saves the repo for the jira issue on the branch name.
+author: Logan Fisher
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+env:
+  DEPLOYMENT_API_URL: ${{ secrets.DEPLOYMENT_API_URL }}
