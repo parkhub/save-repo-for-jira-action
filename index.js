@@ -1,6 +1,12 @@
 const axios = require('axios')
 
-const match = process.env.BRANCH.match(/((?!([A-Z0-9a-z]{1,10})-?$)[A-Z]{1}[A-Z0-9]+-\d+)/g);
+console.log('####### Environment Variables #######')
+console.log("GITHUB_REF: ", process.env.GITHUB_REF)
+console.log("DEPLOYMENT_API_URL: ", process.env.DEPLOYMENT_API_URL)
+console.log("REPO_NAME: ", process.env.REPO_NAME)
+console.log('#####################################')
+
+const match = process.env.GITHUB_REF.match(/((?!([A-Z0-9a-z]{1,10})-?$)[A-Z]{1}[A-Z0-9]+-\d+)/g);
 
 console.log("Match: ", match)
 
