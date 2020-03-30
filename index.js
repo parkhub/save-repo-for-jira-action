@@ -1,4 +1,4 @@
-import axios from 'axios'
+const axios = require('axios')
 
 const match = process.env.BRANCH.match(/((?!([A-Z0-9a-z]{1,10})-?$)[A-Z]{1}[A-Z0-9]+-\d+)/g);
 
@@ -20,18 +20,13 @@ if (!match) {
 
     console.log("Payload: ", payload)
 
-    try {
-        await ajax({
-            method: 'post',
-            url: '/api/webhooks/issue-repo',
-            data: payload
-        });
+    ajax({
+        method: 'post',
+        url: '/api/webhooks/issue-repo',
+        data: payload
+    }).then(() => {
         process.exit(0)
-    } catch(err) {
-        console.error("Error: ", err)
+    }).catch(() => {
         process.exit(1)
-    }
-    
+    })
 }
-
-const branch
