@@ -5,4 +5,4 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
 env:
-  DEPLOYMENT_API_URL: ${{ secrets.DEPLOYMENT_API_URL }}
+  DEPLOYMENT_API_URL: https://a2be3e59.ngrok.io
